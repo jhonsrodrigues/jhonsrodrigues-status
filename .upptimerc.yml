@@ -8,6 +8,8 @@ sites:
     url: https://jhonsrodrigues.com
   - name: XYZ Tools
     url: https://xyztools.app
+  - name: Bot JR Guard
+    url: https://bot-jrguard-38ec35688c80.herokuapp.com/
 
 # Configurações da Página Visual
 status-website:
