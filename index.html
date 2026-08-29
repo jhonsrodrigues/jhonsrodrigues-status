@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status | Jhons Rodrigues</title>
+    <meta name="description" content="Monitoramento em tempo real da infraestrutura e serviços ativos de Jhons Rodrigues. Atualizado a cada 5 minutos.">
+    <link rel="icon" type="image/svg+xml" href="https://tyipxaldonkfqlztqmbk.supabase.co/storage/v1/object/public/public-images/LogotipoJR.svg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+    <div class="background-effects">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+
+    <div class="app-container">
+        <header class="site-header">
+            <div class="header-title-row">
+                <a href="/" class="logo-link">
+                    <img src="https://tyipxaldonkfqlztqmbk.supabase.co/storage/v1/object/public/public-images/LogotipoJR.svg" alt="Jhons Rodrigues Logo" class="brand-logo">
+                </a>
+                <h1>Status do Sistema</h1>
+            </div>
+            <p class="header-subtitle">Monitoramento em tempo real da infraestrutura e serviços ativos.</p>
+        </header>
+
+        <main>
+            <!-- Global Status Banner -->
+            <section class="global-status loading" id="global-status-banner">
+                <div class="status-indicator-pulse"></div>
+                <h2 id="global-status-text">Analisando sistemas...</h2>
+            </section>
+
+            <!-- Services Grid -->
+            <section class="services-section">
+                <div class="services-header">
+                    <h2>Serviços Monitorados</h2>
+                    <span class="last-updated" id="last-updated-text">Atualizando...</span>
+                </div>
+                <div class="services-grid" id="services-grid">
+                    <!-- Cards will be injected here by app.js -->
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="support-section">
+                <div class="support-content">
+                    <h3>Precisa de ajuda?</h3>
+                    <p>Caso esteja com dificuldade para acessar nossos serviços, envie uma mensagem para nosso e-mail de suporte.</p>
+                </div>
+                <div class="support-action">
+                    <button id="copy-email-btn" class="email-btn" onclick="copySupportEmail()">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <span>suporte@jhonsrodrigues.com</span>
+                        <svg class="copy-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    </button>
+                    <span id="copy-feedback" class="copy-feedback">Copiado!</span>
+                </div>
+            </div>
+
+            <div class="footer-main">
+                <div class="footer-brand-row">
+                    <img src="https://tyipxaldonkfqlztqmbk.supabase.co/storage/v1/object/public/public-images/LogotipoJR.svg" alt="Jhons Rodrigues Logo" class="footer-logo">
+                    <div class="footer-copyright">
+                        <p>&copy; <span id="current-year"></span> Jhons Rodrigues. Todos os direitos reservados.</p>
+                        <div class="footer-copyright-links">
+                            <a href="https://jhonsrodrigues.com" target="_blank" rel="noopener noreferrer">Página Principal</a>
+                            <span class="separator">&middot;</span>
+                            <a href="https://www.jhonsrodrigues.com/privacidade.html" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-credits">
+                    <p class="upptime-credit">
+                        Licença de código aberto desenvolvida e distribuída carinhosamente pela equipe do <a href="https://upptime.js.org" target="_blank" rel="noopener noreferrer">Upptime</a>. Muito obrigado! <span class="animated-heart">❤️</span>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="./assets/app.js"></script>
+</body>
+</html>
