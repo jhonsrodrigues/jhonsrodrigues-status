@@ -29,6 +29,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Security: Função para sanitizar HTML e evitar XSS (Cross-Site Scripting)
+    function escapeHTML(str) {
+        if (typeof str !== 'string') return '';
+        return str.replace(/[&<>'"]/g, 
+            tag => ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                "'": '&#39;',
+                '"': '&quot;'
+            }[tag])
+        );
+    }
+
     function renderStatus(services) {
         // Clear skeletons
         servicesGrid.innerHTML = '';
@@ -64,20 +78,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 const recentDates = Object.keys(service.dailyMinutesDown).slice(-3).reverse();
                 incidentsHtml = '<ul style="list-style: none; padding: 0;">';
                 recentDates.forEach(date => {
-                    incidentsHtml += `<li style="margin-bottom: 0.25rem; color: var(--status-down);">⚠️ ${date}: ${service.dailyMinutesDown[date]} minuto(s) de inatividade</li>`;
+                    const safeDate = escapeHTML(date);
+                    const safeMinutes = escapeHTML(String(service.dailyMinutesDown[date]));
+                    incidentsHtml += `<li style="margin-bottom: 0.25rem; color: var(--status-down);">⚠️ ${safeDate}: ${safeMinutes} minuto(s) de inatividade</li>`;
                 });
                 incidentsHtml += '</ul>';
             }
+
+            const safeName = escapeHTML(service.name);
+            const safeUptimeText = escapeHTML(uptimeText);
+            const safeUrl = encodeURI(service.url);
             
             card.innerHTML = `
                 <div class="service-header-clickable">
                     <div class="service-info">
                         <div class="service-icon">
-                            <img src="${customLogo}" alt="${service.name} logo" onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(service.name)}&background=random&color=fff'">
+                            <img src="${customLogo}" alt="${safeName} logo" onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(safeName)}&background=random&color=fff'">
                         </div>
                         <div class="service-details">
-                            <h3>${service.name}</h3>
-                            <span class="service-uptime">${uptimeText}</span>
+                            <h3>${safeName}</h3>
+                            <span class="service-uptime">${safeUptimeText}</span>
                         </div>
                     </div>
                     <div style="display: flex; align-items: center;">
@@ -101,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <h4>Últimos Incidentes</h4>
                             ${incidentsHtml}
                         </div>
-                        <a href="${service.url}" target="_blank" rel="noopener noreferrer" class="visit-site-btn">
+                        <a href="${safeUrl}" target="_blank" rel="noopener noreferrer" class="visit-site-btn">
                             Acessar Site
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -158,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Global copy email function
-window.copySupportEmail = function() {
+function copySupportEmail() {
     const email = 'suporte@jhonsrodrigues.com';
     navigator.clipboard.writeText(email).then(() => {
         const feedback = document.getElementById('copy-feedback');
@@ -169,4 +189,11 @@ window.copySupportEmail = function() {
     }).catch(err => {
         console.error('Falha ao copiar email: ', err);
     });
-};
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const copyBtn = document.getElementById('copy-email-btn');
+    if (copyBtn) {
+        copyBtn.addEventListener('click', copySupportEmail);
+    }
+});
