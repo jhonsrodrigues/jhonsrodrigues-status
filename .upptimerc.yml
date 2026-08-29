@@ -1,6 +1,6 @@
 # Configurações do Repositório
-owner: SEU-USUARIO-GITHUB 
-repo: status-page 
+owner: jhonsrodrigues
+repo: jhonsrodrigues-status
 
 # Serviços Monitorados
 sites:
