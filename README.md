@@ -1,6 +1,6 @@
 # ⚡ Status do Sistema | Jhons Rodrigues
 
-<!--live status--> **🟩 All systems operational**
+<!--live status--> 🟩 All systems operational
 
 Bem-vindo ao repositório de monitoramento de infraestrutura de **Jhons Rodrigues**.  
 Nós monitoramos a disponibilidade e o tempo de resposta dos nossos serviços de forma transparente e em tempo real.
