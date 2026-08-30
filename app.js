@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const LOGOS = {
         'jhons-rodrigues': 'https://tyipxaldonkfqlztqmbk.supabase.co/storage/v1/object/public/public-images/LogotipoJR.png',
         'xyz-tools': 'https://tyipxaldonkfqlztqmbk.supabase.co/storage/v1/object/public/public-images/LogoXYZquadrado.svg',
-        'bot-jr-guard': 'https://tyipxaldonkfqlztqmbk.supabase.co/storage/v1/object/public/public-images/Logotipo%20XYZ%20Vermelho.png'
+        'xyz-guard': 'https://tyipxaldonkfqlztqmbk.supabase.co/storage/v1/object/public/public-images/Logotipo%20XYZ%20Vermelho.png'
     };
 
     const globalStatusBanner = document.getElementById('global-status-banner');
