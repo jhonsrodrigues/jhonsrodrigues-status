@@ -8,8 +8,9 @@ sites:
     url: https://jhonsrodrigues.com
   - name: XYZ Tools
     url: https://xyztools.app
-  - name: XYZ Guard
+  - name: XYZ Guard (Beta)
     url: https://bot-jrguard-38ec35688c80.herokuapp.com/
+    icon: https://tyipxaldonkfqlztqmbk.supabase.co/storage/v1/object/public/public-images/Logotipo%20XYZ%20Vermelho.png
 
 # Configurações da Página Visual
 status-website:
