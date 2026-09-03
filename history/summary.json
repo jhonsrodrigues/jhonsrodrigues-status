@@ -5,17 +5,20 @@
     "icon": "https://icons.duckduckgo.com/ip3/jhonsrodrigues.com.ico",
     "slug": "jhons-rodrigues",
     "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
+    "uptime": "87.96%",
+    "uptimeDay": "46.25%",
+    "uptimeWeek": "87.96%",
+    "uptimeMonth": "87.96%",
+    "uptimeYear": "87.96%",
     "time": 147,
-    "timeDay": 126,
+    "timeDay": 0,
     "timeWeek": 147,
     "timeMonth": 147,
     "timeYear": 147,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2026-09-03": 168,
+      "2026-09-02": 606
+    }
   },
   {
     "name": "XYZ Tools",
@@ -28,11 +31,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 215,
-    "timeDay": 183,
-    "timeWeek": 215,
-    "timeMonth": 215,
-    "timeYear": 215,
+    "time": 220,
+    "timeDay": 293,
+    "timeWeek": 220,
+    "timeMonth": 220,
+    "timeYear": 220,
     "dailyMinutesDown": {}
   },
   {
@@ -46,11 +49,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 71,
-    "timeDay": 24,
-    "timeWeek": 71,
-    "timeMonth": 71,
-    "timeYear": 71,
+    "time": 91,
+    "timeDay": 236,
+    "timeWeek": 91,
+    "timeMonth": 91,
+    "timeYear": 91,
     "dailyMinutesDown": {}
   }
 ]
